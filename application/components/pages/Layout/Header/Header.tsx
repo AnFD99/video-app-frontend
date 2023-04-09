@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { BiSearch } from 'react-icons/bi'
 
 import HeaderIcons from './Icons/HeaderIcons'
 
@@ -8,7 +9,7 @@ const Header: FC = () => {
       <div className='search_top'>
         <label>
           <input type='text' placeholder='Search videos, stars or authors...' />
-          <img src='img/common/search.svg' alt='' />
+          <BiSearch />
         </label>
       </div>
       <HeaderIcons />

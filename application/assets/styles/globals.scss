@@ -272,15 +272,6 @@ img {
       }
     }
 
-    #logout_btn {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      color: $black;
-      margin-bottom: 50px;
-      display: block;
-    }
-
     .copy {
       font-size: 14px;
       color: $gray;
@@ -375,20 +366,6 @@ img {
               color: $gray;
               font-size: 12px;
               margin-bottom: 20px;
-            }
-
-            >.slider_wf {
-              .video_item {
-                padding: 0 10px;
-
-                >.number_info {
-                  justify-content: space-between;
-
-                  >div {
-                    margin: 0;
-                  }
-                }
-              }
             }
           }
 

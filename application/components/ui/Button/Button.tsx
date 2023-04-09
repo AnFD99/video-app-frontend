@@ -10,7 +10,12 @@ const Button: FC<PropsWithChildren<IButton>> = ({
   ...props
 }) => {
   return (
-    <button className={cn(styles.button, className)} {...props}>
+    <button
+      className={cn(styles.button, {
+        [styles.secondaryButton]: className
+      })}
+      {...props}
+    >
       {children}
     </button>
   )

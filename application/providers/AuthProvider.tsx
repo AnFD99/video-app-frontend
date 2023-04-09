@@ -1,31 +1,47 @@
-import React, {
-  Dispatch,
-  FC,
-  PropsWithChildren,
-  SetStateAction,
-  createContext,
-  useState
-} from 'react'
+import Cookies from 'js-cookie';
+import { useRouter } from 'next/router';
+import React, { Dispatch, FC, PropsWithChildren, SetStateAction, createContext, useEffect, useState } from 'react';
 
-interface IData {
-  user: {
-    _id: string
-    email: string
-  } | null
-  accessToken: string
-}
 
-interface IContext extends IData {
-  setData: Dispatch<SetStateAction<IData>> | null
+
+import { IAuthData } from '@/services/auth/auth.helper';
+import { AuthService } from '@/services/auth/auth.service';
+
+
+interface IContext extends IAuthData {
+  setData: Dispatch<SetStateAction<IAuthData>> | null
 }
 
 export const AuthContext = createContext<IContext>({} as IContext)
 
+export const authInitialState = {
+  user: null,
+  accessToken: ''
+}
+
 const AuthProvider: FC<PropsWithChildren<unknown>> = ({ children }) => {
-  const [data, setData] = useState<IData>({
-    user: null,
-    accessToken: ''
-  })
+  const [data, setData] = useState<IAuthData>(authInitialState)
+
+  const { pathname } = useRouter()
+
+  useEffect(() => {
+    const accessToken = Cookies.get('accessToken')
+    if (!accessToken && !data.user) {
+      AuthService.logout()
+      setData(authInitialState)
+    }
+  }, [pathname])
+
+  useEffect(() => {
+    const accessToken = Cookies.get('accessToken')
+    if (accessToken) {
+      const user = JSON.parse(localStorage.getItem('user') || '')
+      setData({
+        user,
+        accessToken
+      })
+    }
+  }, [])
 
   return (
     <AuthContext.Provider value={{ ...data, setData }}>

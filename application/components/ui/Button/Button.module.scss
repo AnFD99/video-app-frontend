@@ -1,0 +1,7 @@
+.button {
+	@apply py-1.5 px-5 mt-4 text-white bg-primary border border-primary rounded-md cursor-pointer block transition-colors duration-300 hover:bg-fontColor hover:border-fontColor;
+}
+
+.secondaryButton {
+	@apply bg-transparent border border-primary text-fontColor transition-colors duration-300 hover:border-white hover:bg-white;
+}

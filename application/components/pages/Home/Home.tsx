@@ -1,14 +1,13 @@
 import { FC, PropsWithChildren } from 'react'
-import WeeklyFeatured from './WeeklyFeatured/WeeklyFeatured'
+
 import Line from '../../ui/Line'
-import Recommended from './Recommended/Recommended'
-import Rightside from '../Layout/Rightside/Rightside'
 import Layout from '../Layout/Layout'
-import { useAuth } from '../../../hooks/useAuth'
+import Rightside from '../Layout/Rightside/Rightside'
+
+import Recommended from './Recommended/Recommended'
+import WeeklyFeatured from './WeeklyFeatured/WeeklyFeatured'
 
 const Home: FC<PropsWithChildren<unknown>> = () => {
-  const { user } = useAuth()
-
   return (
     <Layout title='Video App - Best video'>
       <div id='wrapper_content'>

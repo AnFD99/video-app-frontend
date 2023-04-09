@@ -15,12 +15,19 @@ import {
   MdOutlineSmartphone
 } from 'react-icons/md'
 
-import logoImg from '../../../../assets/img/common/logo3.svg'
-import avatarImg from '../../../../assets/img/main/avatar.jpg'
-import { useAuth } from '../../../../hooks/useAuth'
+import Button from '@/components/ui/Button/Button'
+
+import { authInitialState } from '@/providers/AuthProvider'
+
+import { AuthService } from '@/services/auth/auth.service'
+
+import logoImg from '@/assets/img/common/logo3.svg'
+import avatarImg from '@/assets/img/main/avatar.jpg'
+
+import { useAuth } from '@/hooks/useAuth'
 
 const Sidebar: FC<PropsWithChildren> = () => {
-  const { user } = useAuth()
+  const { user, setData } = useAuth()
 
   return user ? (
     <section className='sidebar'>
@@ -131,9 +138,14 @@ const Sidebar: FC<PropsWithChildren> = () => {
         <p>Light On</p>
       </div>
 
-      <a href='#' id='logout_btn'>
+      <Button
+        onClick={() => {
+          AuthService.logout()
+          setData && setData(authInitialState)
+        }}
+      >
         Logout
-      </a>
+      </Button>
       <div className='copy'>© 2020 Youtube, LLC</div>
     </section>
   ) : null

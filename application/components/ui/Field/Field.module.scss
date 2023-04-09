@@ -1,18 +1,18 @@
-@import '../../../assets/styles/vars';
+@import '../../../assets/styles/_vars';
+
+.wrapper {
+	@apply relative block w-full mb-4;
+}
 
 .input {
-	@apply relative block;
+	@apply border-b py-2 w-full;
 
-	>input {
-
-		@apply py-2 w-full border-b;
-
-		&::placeholder {
-			color: $gray;
-		}
+	&::placeholder {
+		color: $gray;
 	}
 }
 
 .error {
-	@apply absolute -bottom-6 left-0 text-sm w-full text-primary;
+	@apply absolute -bottom-5 left-0 text-sm w-full text-red;
+	font-size: .6rem;
 }
