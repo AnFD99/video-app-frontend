@@ -1,20 +1,31 @@
-import React, { FC, useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-import { BiUserCircle } from 'react-icons/bi'
-import { useMutation } from 'react-query'
+import React, { FC, useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { BiUserCircle } from 'react-icons/bi';
+import { useMutation } from 'react-query';
 
-import Button from '@/components/ui/Button/Button'
-import Field from '@/components/ui/Field/Field'
 
-import { AuthService } from '@/services/auth/auth.service'
 
-import { useAuth } from '@/hooks/useAuth'
-import { useOutside } from '@/hooks/useOutside'
+import Button from '@/components/ui/Button/Button';
+import Field from '@/components/ui/Field/Field';
 
-import stylesIcons from '../Icons/HeaderIcons.module.scss'
 
-import { IAuthFields, validEmail } from './AuthForm.inteface'
-import styles from './AuthForm.module.scss'
+
+import { AuthService } from '@/services/auth/auth.service';
+
+
+
+import { useAuth } from '@/hooks/useAuth';
+import { useOutside } from '@/hooks/useOutside';
+
+
+
+import stylesIcons from '../Icons/HeaderIcons.module.scss';
+
+
+
+import { IAuthFields, validEmail } from './AuthForm.inteface';
+import styles from './AuthForm.module.scss';
+
 
 const AuthForm: FC = () => {
   const { ref, setIsShown, isShown } = useOutside(false)
@@ -41,11 +52,21 @@ const AuthForm: FC = () => {
     }
   )
 
+  const { mutate: registration } = useMutation(
+    'register',
+    (data: IAuthFields) => AuthService.register(data.email, data.password),
+    {
+      onSuccess(data) {
+        if (setData) setData(data)
+      }
+    }
+  )
+
   const onSubmit: SubmitHandler<IAuthFields> = (data) => {
     if (type === 'login') {
       login(data)
     } else if (type === 'register') {
-      console.log('register', data.email)
+      registration(data)
     }
   }
 
