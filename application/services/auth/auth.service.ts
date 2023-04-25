@@ -1,10 +1,7 @@
 import { axiosClassic } from 'api/api'
+import { IAuthData } from 'types/auth.interface'
 
-import {
-  IAuthData,
-  removeTokensFromStorage,
-  saveToStorage
-} from './auth.helper'
+import { removeTokensFromStorage, saveToStorage } from './auth.helper'
 
 export const AuthService = {
   async login(email: string, password: string) {

@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
-import Line from '../../../ui/Line'
+
+import Line from '../../../ui/Line/Line'
+
 import MostPopularVideo from './MostPopularVideo/MostPopularVideo'
 import TopChannels from './TopChannels/TopChannels'
 

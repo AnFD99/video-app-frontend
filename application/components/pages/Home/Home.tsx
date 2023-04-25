@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 
-import Line from '../../ui/Line'
+import Line from '../../ui/Line/Line'
 import Layout from '../Layout/Layout'
 import Rightside from '../Layout/Rightside/Rightside'
 

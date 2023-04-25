@@ -10,14 +10,14 @@ export const axiosClassic = axios.create({
   }
 })
 
-export const authInstance = axios.create({
+export const instanceAPI = axios.create({
   baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json'
   }
 })
 
-authInstance.interceptors.request.use((config) => {
+instanceAPI.interceptors.request.use((config) => {
   const accessToken = Cookies.get('accessToken')
   if (config.headers && accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`
@@ -25,4 +25,4 @@ authInstance.interceptors.request.use((config) => {
   return config
 })
 
-// instance.interceptors.response.use((config) => {})
+instanceAPI.interceptors.response.use((config) => config)

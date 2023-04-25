@@ -1,12 +1,17 @@
-import Cookies from 'js-cookie';
-import { useRouter } from 'next/router';
-import React, { Dispatch, FC, PropsWithChildren, SetStateAction, createContext, useEffect, useState } from 'react';
+import Cookies from 'js-cookie'
+import { useRouter } from 'next/router'
+import React, {
+  Dispatch,
+  FC,
+  PropsWithChildren,
+  SetStateAction,
+  createContext,
+  useEffect,
+  useState
+} from 'react'
+import { IAuthData } from 'types/auth.interface'
 
-
-
-import { IAuthData } from '@/services/auth/auth.helper';
-import { AuthService } from '@/services/auth/auth.service';
-
+import { AuthService } from '@/services/auth/auth.service'
 
 interface IContext extends IAuthData {
   setData: Dispatch<SetStateAction<IAuthData>> | null

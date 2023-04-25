@@ -1,31 +1,20 @@
-import React, { FC, useState } from 'react';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { BiUserCircle } from 'react-icons/bi';
-import { useMutation } from 'react-query';
+import React, { FC, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { BiUserCircle } from 'react-icons/bi'
+import { useMutation } from 'react-query'
 
+import Button from '@/components/ui/Button/Button'
+import Field from '@/components/ui/Field/Field'
 
+import { AuthService } from '@/services/auth/auth.service'
 
-import Button from '@/components/ui/Button/Button';
-import Field from '@/components/ui/Field/Field';
+import { useAuth } from '@/hooks/useAuth'
+import { useOutside } from '@/hooks/useOutside'
 
+import stylesIcons from '../Icons/HeaderIcons.module.scss'
 
-
-import { AuthService } from '@/services/auth/auth.service';
-
-
-
-import { useAuth } from '@/hooks/useAuth';
-import { useOutside } from '@/hooks/useOutside';
-
-
-
-import stylesIcons from '../Icons/HeaderIcons.module.scss';
-
-
-
-import { IAuthFields, validEmail } from './AuthForm.inteface';
-import styles from './AuthForm.module.scss';
-
+import { IAuthFields, validEmail } from './AuthForm.inteface'
+import styles from './AuthForm.module.scss'
 
 const AuthForm: FC = () => {
   const { ref, setIsShown, isShown } = useOutside(false)

@@ -1,0 +1,65 @@
+@import '../../../../../assets/styles/vars';
+
+.menu {
+	list-style-type: none;
+
+	>li {
+		display: block;
+		margin-bottom: 34px;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.menu__link {
+			display: flex;
+			align-items: center;
+			font-size: 14px;
+			color: $font-color;
+			font-weight: 500;
+			position: relative;
+
+			.icon {
+				display: block;
+				margin-right: 12px;
+				max-width: 20px;
+				height: auto;
+				color: $gray;
+				font-size: 20px;
+
+				transition: $transition;
+			}
+
+			span {
+				font-weight: 400;
+			}
+
+			span .number {
+				color: $primary;
+				margin-left: 20px;
+			}
+
+			&::before {
+				content: '';
+				height: 100%;
+				width: 10px;
+				border-radius: 10px;
+				background-color: $primary;
+				position: absolute;
+				left: -30px;
+				top: 0;
+				opacity: 0;
+
+				transition: $transition;
+			}
+
+			&:hover::before {
+				opacity: 1;
+			}
+
+			&:hover .icon {
+				color: $primary;
+			}
+		}
+	}
+}
