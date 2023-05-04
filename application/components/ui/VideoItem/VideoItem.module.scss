@@ -1,0 +1,66 @@
+.videoItem {
+	@apply block max-w-lg;
+
+	.thumbnail {
+		@apply inline-block w-full h-32 relative;
+
+		.thumbnail__img {
+			@apply object-cover;
+		}
+
+		.hot {
+			@apply text-xs text-white rounded-sm flex items-center justify-center bg-red w-12 h-5;
+
+			position: absolute;
+			left: 10px;
+			top: 10px;
+			z-index: 100;
+		}
+
+		.avatar {
+			@apply bg-white p-1 rounded-full inline-block w-14 h-14 overflow-hidden;
+
+			position: absolute;
+			right: 10px;
+			bottom: -18px;
+			z-index: 1000;
+
+			.avatar__img {
+				@apply rounded-full w-full h-full object-cover;
+			}
+		}
+	}
+
+	.thumbnail_big {
+		@apply h-60;
+	}
+
+	.author {
+		@apply text-gray mt-1;
+	}
+
+	.name {
+		@apply font-semibold mt-1 mb-2 text-sm truncate;
+	}
+
+	.description {
+		@apply text-gray text-xs mb-5;
+	}
+
+	.number__info {
+		@apply flex items-center justify-between gap-x-4;
+
+		& div {
+			@apply text-xs font-semibold text-gray uppercase text-center;
+		}
+	}
+}
+
+.time {
+	@apply flex items-center justify-center w-16 h-7 rounded-sm text-white text-xs bg-black/[.5];
+
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	z-index: 1000;
+}

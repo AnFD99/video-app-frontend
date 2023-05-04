@@ -11,12 +11,12 @@ const Menu: FC = () => {
   return (
     <ul className={styles.menu}>
       {menu.map((item, i) => (
-        <>
-          <MenuItem item={item} key={item.title}>
+        <li key={item.title}>
+          <MenuItem item={item} >
             {icons[i]}
           </MenuItem>
           {i === 3 && <Line />}
-        </>
+        </li>
       ))}
       <Line />
     </ul>

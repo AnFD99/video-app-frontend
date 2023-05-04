@@ -1,0 +1,25 @@
+.weekly_featured {
+	@apply flex;
+
+	.info_wf {
+		@apply w-1/2 pr-4;
+
+		.sub_name {
+			@apply text-lg font-medium;
+		}
+
+		& h1 {
+			@apply text-2xl;
+
+			margin: 30px 0 20px;
+		}
+
+		.descriprion {
+			@apply text-gray text-xs mb-5;
+		}
+	}
+
+	.top_video {
+		@apply w-1/2 pl-4;
+	}
+}

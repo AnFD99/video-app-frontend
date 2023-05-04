@@ -22,7 +22,14 @@ const ProfileInfo: FC<PropsWithChildren> = () => {
     <>
       <div className={styles.profile__info}>
         <div className={styles.avatar}>
-          <Image src={data?.avatarPath || ''} alt='' width={70} height={70} />
+          <Image
+            className={styles.avatar__img}
+            src={data?.avatarPath || ''}
+            alt=''
+            fill
+            sizes=''
+            quality={90}
+          />
         </div>
 
         <div className={styles.name}>{data?.name}</div>
