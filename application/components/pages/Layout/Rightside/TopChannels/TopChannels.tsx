@@ -1,94 +1,24 @@
 import React, { FC } from 'react'
-import { GoKebabVertical } from 'react-icons/go'
 
-import avatarImg from '../../../../../assets/img/main/avatar.jpg'
+import ShowMore from '@/components/ui/Button/ShowMore/ShowMore'
 
-const TopChannels: FC = () => {
+import { IUser } from '@/types/user.interface'
+
+import ChannelItem from './ChannelItem'
+import styles from './TopChannels.module.scss'
+
+const TopChannels: FC<{ channels: IUser[] }> = ({ channels }) => {
   return (
-    <div id='top_channels'>
-      <div className='title_gray'>
-        <h2>Top Channels</h2>
-        <div className='showmore'>Show More</div>
+    <div className={styles.top_channels}>
+      <div className={styles.top}>
+        <h2>Top channels</h2>
+        <ShowMore />
       </div>
 
-      <div className='list_channels'>
-        <div className='channel'>
-          <div className='info_left'>
-            <img src={avatarImg.src} alt='' />
-            <div className='info'>
-              <div className='name'>LEGO</div>
-              <div className='subs'>6.2M Subscribers</div>
-            </div>
-          </div>
-          <a href='#' className='mnu'>
-            <GoKebabVertical />
-          </a>
-        </div>
-
-        <div className='channel'>
-          <div className='info_left'>
-            <img src={avatarImg.src} alt='' />
-            <div className='info'>
-              <div className='name'>LEGO</div>
-              <div className='subs'>6.2M Subscribers</div>
-            </div>
-          </div>
-          <a href='#' className='mnu'>
-            <GoKebabVertical />
-          </a>
-        </div>
-
-        <div className='channel'>
-          <div className='info_left'>
-            <img src={avatarImg.src} alt='' />
-            <div className='info'>
-              <div className='name'>LEGO</div>
-              <div className='subs'>6.2M Subscribers</div>
-            </div>
-          </div>
-          <a href='#' className='mnu'>
-            <GoKebabVertical />
-          </a>
-        </div>
-
-        <div className='channel'>
-          <div className='info_left'>
-            <img src={avatarImg.src} alt='' />
-            <div className='info'>
-              <div className='name'>LEGO</div>
-              <div className='subs'>6.2M Subscribers</div>
-            </div>
-          </div>
-          <a href='#' className='mnu'>
-            <GoKebabVertical />
-          </a>
-        </div>
-
-        <div className='channel'>
-          <div className='info_left'>
-            <img src={avatarImg.src} alt='' />
-            <div className='info'>
-              <div className='name'>LEGO</div>
-              <div className='subs'>6.2M Subscribers</div>
-            </div>
-          </div>
-          <a href='#' className='mnu'>
-            <GoKebabVertical />
-          </a>
-        </div>
-
-        <div className='channel'>
-          <div className='info_left'>
-            <img src={avatarImg.src} alt='' />
-            <div className='info'>
-              <div className='name'>LEGO</div>
-              <div className='subs'>6.2M Subscribers</div>
-            </div>
-          </div>
-          <a href='#' className='mnu'>
-            <GoKebabVertical />
-          </a>
-        </div>
+      <div className={styles.channels__list}>
+        {channels.map((channel) => (
+          <ChannelItem item={channel} key={channel._id} />
+        ))}
       </div>
     </div>
   )

@@ -1,24 +1,26 @@
-import { FC, } from 'react'
+import { FC } from 'react'
 
 import Line from '../../ui/Line/Line'
 import Layout from '../Layout/Layout'
 import Rightside from '../Layout/Rightside/Rightside'
 
-import Recommended from './Recommended/Recommended'
+import NewestVideo from './NewestVideo/NewestVideo'
 import WeeklyFeatured from './WeeklyFeatured/WeeklyFeatured'
 import { IHome } from './home.interface'
 
-const Home: FC<IHome> = ({ weeklyVideos, randomVideo, newVideos }) => {
-
+const Home: FC<IHome> = (props) => {
   return (
     <Layout title='Video App - Best video'>
       <div id='wrapper_content'>
         <div className='left_side'>
-          <WeeklyFeatured weeklyVideos={weeklyVideos} randomVideo={randomVideo} />
+          <WeeklyFeatured
+            weeklyVideos={props.weeklyVideos}
+            randomVideo={props.randomVideo}
+          />
           <Line />
-          <Recommended />
+          <NewestVideo newVideos={props.newVideos} />
         </div>
-        <Rightside />
+        <Rightside topChannels={props.topChannels} topVideo={props.topVideo} />
       </div>
     </Layout>
   )

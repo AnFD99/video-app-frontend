@@ -1,8 +1,8 @@
 .videoItem {
-	@apply block max-w-lg;
+	@apply block;
 
 	.thumbnail {
-		@apply inline-block w-full h-32 relative;
+		@apply inline-block w-full h-32 relative items-center;
 
 		.thumbnail__img {
 			@apply object-cover;
@@ -18,11 +18,11 @@
 		}
 
 		.avatar {
-			@apply bg-white p-1 rounded-full inline-block w-14 h-14 overflow-hidden;
+			@apply bg-white p-1 rounded-full inline-block w-12 h-12 overflow-hidden;
 
 			position: absolute;
 			right: 10px;
-			bottom: -18px;
+			bottom: -20px;
 			z-index: 1000;
 
 			.avatar__img {
@@ -50,17 +50,19 @@
 	.number__info {
 		@apply flex items-center justify-between gap-x-4;
 
-		& div {
-			@apply text-xs font-semibold text-gray uppercase text-center;
+		div {
+			@apply text-xs font-medium text-gray uppercase text-center;
 		}
+
+
 	}
-}
 
-.time {
-	@apply flex items-center justify-center w-16 h-7 rounded-sm text-white text-xs bg-black/[.5];
+	.time {
+		@apply flex items-center justify-center w-16 h-7 rounded-sm text-white text-xs bg-black/[.5];
 
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	z-index: 1000;
+		position: absolute;
+		left: 10px;
+		bottom: 10px;
+		z-index: 1000;
+	}
 }

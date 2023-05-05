@@ -25,6 +25,7 @@ const VideoItem: FC<IVideoItem> = ({
             [styles.thumbnail_big]: size === 'large'
           })}
         >
+          {size === 'hot' && <div className={styles.hot}>Hot</div>}
           <Image
             className={styles.thumbnail__img}
             src={item.thumbnailPath}
@@ -32,7 +33,7 @@ const VideoItem: FC<IVideoItem> = ({
             fill
             sizes='(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
-              33vw"'
+              33vw'
             priority
           />
           <VideoDuration videoPath={item.videoPath} />
@@ -52,8 +53,10 @@ const VideoItem: FC<IVideoItem> = ({
         <div className={styles.author}>{item.user?.name}</div>
         <div className={styles.name}>{item.name}</div>
       </Link>
-      {size === 'large' && (
+      {size === 'large' || size === 'hot' ? (
         <div className={styles.description}>{item.description}</div>
+      ) : (
+        ''
       )}
       <div className={styles.number__info}>
         <div className={styles.views}>VIEWS {formatNumber(item.views)}</div>

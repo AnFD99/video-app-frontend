@@ -1,0 +1,23 @@
+.newest {
+
+	.top_block {
+		@apply flex items-center justify-between mb-6;
+
+		.top__left_side {
+			@apply flex items-center gap-4;
+
+			h2 {
+				@apply font-semibold;
+			}
+		}
+
+		.sort {
+			@apply text-xs font-medium;
+		}
+	}
+
+	.catalog {
+		@apply grid grid-cols-4;
+		gap: 25px 15px;
+	}
+}

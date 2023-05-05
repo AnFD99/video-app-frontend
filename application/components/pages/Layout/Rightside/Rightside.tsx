@@ -1,16 +1,22 @@
 import React, { FC } from 'react'
 
+import { IUser } from '@/types/user.interface'
+import { IVideo } from '@/types/video.interface'
+
 import Line from '../../../ui/Line/Line'
 
 import MostPopularVideo from './MostPopularVideo/MostPopularVideo'
 import TopChannels from './TopChannels/TopChannels'
 
-const Rightside: FC = () => {
+const Rightside: FC<{ topVideo: IVideo; topChannels: IUser[] }> = ({
+  topVideo,
+  topChannels
+}) => {
   return (
     <div className='right_side'>
-      <MostPopularVideo />
+      <MostPopularVideo video={topVideo} />
       <Line />
-      <TopChannels />
+      <TopChannels channels={topChannels} />
     </div>
   )
 }

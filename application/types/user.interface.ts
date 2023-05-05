@@ -10,6 +10,7 @@ export interface IUser {
   createdAt: string
   updatedAt: string
   videosCount?: number
+  isVerified?: boolean
 }
 
 export interface IUserDetails

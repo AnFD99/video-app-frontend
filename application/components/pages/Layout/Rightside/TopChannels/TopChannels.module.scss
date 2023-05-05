@@ -1,0 +1,49 @@
+.top_channels {
+
+	.top {
+		@apply flex items-center gap-4 mb-5;
+
+		h2 {
+			@apply font-semibold;
+		}
+	}
+
+	.channels__list {
+
+		.channel {
+			@apply flex items-center justify-between mb-6;
+
+			.channel__info {
+				@apply flex items-center align-middle;
+
+				.avatar {
+					@apply rounded-full inline-block w-9 h-9 overflow-hidden relative mr-3;
+
+					.channel__avatar {
+						@apply rounded-full w-full h-full object-cover;
+					}
+				}
+
+				.info {
+					.name {
+						@apply font-semibold relative w-max;
+
+						.verified__icon {
+							@apply text-sm fill-green;
+
+							position: absolute;
+							top: 50%;
+							right: -20px;
+							z-index: 1000;
+							transform: translateY(-50%)
+						}
+					}
+
+					.subscribers {
+						@apply text-gray text-xs;
+					}
+				}
+			}
+		}
+	}
+}

@@ -3,7 +3,7 @@
 .menu {
 	@apply list-none;
 
-	& li {
+	li {
 		@apply block mb-8;
 
 		&:last-child {
@@ -11,7 +11,7 @@
 		}
 
 		.menu__link {
-			@apply flex items-center text-sm text-fontColor font-medium relative;
+			@apply flex items-center text-sm text-fontColor relative;
 
 			.icon {
 				@apply block mr-3 h-auto text-gray text-xl;

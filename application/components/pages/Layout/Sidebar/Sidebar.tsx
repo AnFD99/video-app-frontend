@@ -1,5 +1,6 @@
+import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC, PropsWithChildren } from 'react'
+import { FC, PropsWithChildren } from 'react'
 
 import Button from '@/components/ui/Button/Button'
 import Line from '@/components/ui/Line/Line'
@@ -14,30 +15,25 @@ import { useAuth } from '@/hooks/useAuth'
 
 import Menu from './Menu/Menu'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
+import styles from './Sidebar.module.scss'
 
 const Sidebar: FC<PropsWithChildren> = () => {
   const { user, setData } = useAuth()
 
   return user ? (
-    <section className='sidebar'>
-      <Link href='/' className='logo'>
-        <img
+    <section className={styles.sidebar}>
+      <Link href='/' className={styles.logo}>
+        <Image
+          className={styles.logo__img}
           src={logoImg.src}
-          alt='Youtube'
-          // width={130}
-          // height={42}
+          alt=''
+          width={130}
+          height={42}
         />
       </Link>
       <ProfileInfo />
       <Line />
       <Menu />
-      <div className='switch_wrapper'>
-        <label className='switch'>
-          <input type='checkbox' defaultChecked />
-          <span className='slider round'></span>
-        </label>
-        <p>Light On</p>
-      </div>
 
       <Button
         onClick={() => {
@@ -47,7 +43,7 @@ const Sidebar: FC<PropsWithChildren> = () => {
       >
         Logout
       </Button>
-      <div className='copy'>© 2023 AnFD</div>
+      <div className={styles.copy}>© 2023 AnFD</div>
     </section>
   ) : null
 }

@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
-    './app/components/**/*.{js,ts,jsx,tsx}'
+    './application/components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {
@@ -13,7 +13,8 @@ module.exports = {
         gray: '#A4A4A4',
         fontColor: '#112D4E',
         black: '#111',
-        red: '#E21818'
+        red: '#E21818',
+        green: '#0bda51'
       },
       keyframes: {
         fade: {

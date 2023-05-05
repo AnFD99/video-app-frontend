@@ -8,8 +8,8 @@
 			@apply text-lg font-medium;
 		}
 
-		& h1 {
-			@apply text-2xl;
+		h1 {
+			@apply text-2xl font-semibold;
 
 			margin: 30px 0 20px;
 		}
