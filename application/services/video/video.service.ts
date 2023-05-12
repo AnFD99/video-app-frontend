@@ -14,8 +14,14 @@ export const VideoService = {
     return response
   },
 
-  async getAll() {
-    const response = await axiosClassic.get<IVideo[]>('/video')
+  async getAll(searchTerm?: string) {
+    const response = await axiosClassic.get<IVideo[]>(`/video`, {
+      params: searchTerm
+        ? {
+            searchTerm
+          }
+        : []
+    })
 
     return response
   },

@@ -5,6 +5,7 @@ import { FC, PropsWithChildren } from 'react'
 import { useAuth } from '@/hooks/useAuth'
 
 import Header from './Header/Header'
+import styles from './Layout.module.scss'
 import Sidebar from './Sidebar/Sidebar'
 
 const Layout: FC<PropsWithChildren<{ title: string }>> = ({
@@ -18,18 +19,18 @@ const Layout: FC<PropsWithChildren<{ title: string }>> = ({
       <Head>
         <title>{title}</title>
       </Head>
-      <main id='youtube_main'>
+      <div className={styles.app__container}>
         <Sidebar />
         <section
-          className={cn('content', {
-            'content-full': !user
+          className={cn(styles.content, {
+            [styles.content_full]: !user
           })}
         >
           <Header />
 
-          <div className='content-wrapper'>{children}</div>
+          {children}
         </section>
-      </main>
+      </div>
     </>
   )
 }

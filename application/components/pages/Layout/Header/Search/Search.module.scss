@@ -1,0 +1,49 @@
+ @import '../../../../../assets/styles/_vars';
+
+ .search_top {
+ 	@apply mx-auto max-w-md relative;
+
+ 	>label {
+ 		@apply block relative;
+
+ 		input {
+ 			@apply border border-solid border-lightGray rounded-[30px] py-2 px-4 w-full block;
+
+ 			transition: $transition;
+
+ 			&::placeholder {
+ 				@apply text-gray opacity-80 italic;
+ 			}
+
+ 			&:focus {
+ 				box-shadow: 0 3px 6px rgba($black, .04);
+ 			}
+ 		}
+
+ 		.icon {
+ 			position: absolute;
+ 			right: 15px;
+ 			top: 50%;
+ 			z-index: 1;
+ 			transform: translateY(-50%);
+ 			max-width: 15px;
+ 		}
+ 	}
+ }
+
+ .result {
+ 	@apply flex bg-[#F9F7F7] justify-center p-6 rounded-xl w-max animate-fade;
+ 	position: absolute;
+ 	top: 45px;
+ 	left: 50%;
+ 	z-index: 10;
+ 	transform: translateX(-50%);
+	box-shadow: 0px 19px 20px 2px rgba($black, .5);
+	transition: $transition;
+
+ 	.result__items {
+ 		@apply grid gap-3;
+
+		grid-template-columns: repeat(4, 1fr);
+ 	}
+ }

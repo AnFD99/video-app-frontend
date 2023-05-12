@@ -3,6 +3,7 @@ import { FC, useRef } from 'react'
 import styles from './VideoItem.module.scss'
 
 const VideoDuration: FC<{ videoPath: string }> = ({ videoPath }) => {
+  // todo перезаписать время в useState, чтобы при перезагрузке быстро подгружалось
   const ref = useRef<HTMLVideoElement>(null)
   const duration = ref.current?.duration || 0
 

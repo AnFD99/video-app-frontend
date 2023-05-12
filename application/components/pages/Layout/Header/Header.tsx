@@ -1,17 +1,13 @@
 import React, { FC } from 'react'
-import { BiSearch } from 'react-icons/bi'
 
+import styles from './Header.module.scss'
 import HeaderIcons from './Icons/HeaderIcons'
+import Search from './Search/Search'
 
 const Header: FC = () => {
   return (
-    <header id='header'>
-      <div className='search_top'>
-        <label>
-          <input type='text' placeholder='Search videos, stars or authors...' />
-          <BiSearch />
-        </label>
-      </div>
+    <header className={styles.header}>
+      <Search />
       <HeaderIcons />
     </header>
   )

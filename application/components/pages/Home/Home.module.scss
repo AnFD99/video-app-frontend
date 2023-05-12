@@ -1,0 +1,10 @@
+@import '../../../assets/styles/_vars';
+
+.main__container {
+	@apply flex flex-wrap;
+
+	.left_side {
+		@apply p-6 w-3/4;
+		border-right: 1px solid rgba($light-gray, 0.58);
+	}
+}

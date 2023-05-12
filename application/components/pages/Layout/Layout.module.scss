@@ -1,0 +1,17 @@
+.app__container {
+	@apply flex flex-wrap;
+	height: 100vh;
+	width: 100vw;
+	max-width: 100%;
+	margin: 0 auto;
+
+	.content {
+		@apply w-10/12;
+
+		&.content_full {
+			@apply w-full;
+		}
+
+
+	}
+}
