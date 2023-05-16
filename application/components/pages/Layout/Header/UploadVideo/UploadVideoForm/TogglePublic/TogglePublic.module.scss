@@ -1,0 +1,11 @@
+.toggle__container {
+	@apply flex flex-wrap items-center;
+
+	.switch {
+		@apply relative inline-flex h-6 w-11 items-center rounded-full mr-3;
+
+		.switcher {
+			@apply inline-block h-4 w-4 rounded-full bg-white transform transition ease-linear duration-200;
+		}
+	}
+}
