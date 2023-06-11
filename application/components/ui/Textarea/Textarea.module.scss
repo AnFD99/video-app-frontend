@@ -1,12 +1,12 @@
 @import '../../../assets/styles/_vars';
 
 .wrapper {
-	@apply relative block w-full mb-4;
+	@apply relative block w-full mb-6;
 }
 
 .textarea {
-	@apply py-2 w-full resize-none border;
-	min-height: 200px;
+	@apply py-2 w-full resize-none border-b;
+	min-height: 150px;
 
 	&::placeholder {
 		color: $gray;

@@ -1,0 +1,50 @@
+.footer {
+	@apply flex justify-between items-center w-full p-5;
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 52;
+
+	.statusBar {
+		@apply flex items-center;
+
+		.icon__upload,
+		.icon__check {
+			@apply text-xl mr-3;
+		}
+
+		.icon__upload {
+			@apply text-primary;
+			animation: blueAnimate 2s ease-in-out infinite;
+		}
+
+		.icon__check {
+			@apply hidden;
+		}
+
+		&.uploaded {
+			.icon__upload {
+				@apply animate-none hidden;
+			}
+
+			.icon__check {
+				@apply text-green block;
+			}
+		}
+	}
+}
+
+@keyframes blueAnimate {
+	0% {
+		opacity: 30%;
+	}
+
+	50% {
+		opacity: 90%;
+	}
+
+	100% {
+		opacity: 30%;
+	}
+}

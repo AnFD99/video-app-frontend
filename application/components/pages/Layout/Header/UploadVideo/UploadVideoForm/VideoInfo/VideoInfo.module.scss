@@ -1,0 +1,26 @@
+@import '../../../../../../../assets/styles/vars';
+
+.info {
+
+	.thumbnail {
+		@apply bg-lightGray flex items-center justify-center w-full text-fontColor;
+
+		min-height: 200px;
+	}
+
+	.details {
+		@apply flex flex-col gap-3 bg-slate-50 w-full p-4;
+	}
+}
+
+.info__text {
+	@apply flex flex-col;
+
+	.info__title {
+		@apply text-base mb-1 opacity-70;
+	}
+
+	& a {
+		@apply block underline w-max text-primary;
+	}
+}

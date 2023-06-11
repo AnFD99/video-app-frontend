@@ -4,7 +4,7 @@ import React, { FC, PropsWithChildren } from 'react'
 import styles from './Menu.module.scss'
 import { IMenuItem } from './menu.interface'
 
-const MenuItem: FC<{ item: IMenuItem } & PropsWithChildren> = ({
+const MenuItem: FC<PropsWithChildren<{ item: IMenuItem }>> = ({
   item,
   children
 }) => {

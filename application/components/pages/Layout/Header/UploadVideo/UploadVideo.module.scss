@@ -24,8 +24,11 @@
 				@apply mx-auto rounded bg-white relative p-6;
 
 				width: 100%;
+				height: 600px;
 
 				.modal__close {
+					@apply cursor-pointer;
+
 					position: absolute;
 					top: 20px;
 					right: 20px;

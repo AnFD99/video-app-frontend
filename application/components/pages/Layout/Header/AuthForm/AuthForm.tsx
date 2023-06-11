@@ -11,8 +11,6 @@ import { AuthService } from '@/services/auth/auth.service'
 import { useAuth } from '@/hooks/useAuth'
 import { useOutside } from '@/hooks/useOutside'
 
-import stylesIcons from '../Icons/HeaderIcons.module.scss'
-
 import { IAuthFields, validEmail } from './AuthForm.inteface'
 import styles from './AuthForm.module.scss'
 
@@ -60,9 +58,9 @@ const AuthForm: FC = () => {
   }
 
   return (
-    <div className={styles.wrapper} ref={ref}>
+    <div className={styles.auth__container} ref={ref}>
       <button
-        className={stylesIcons.button}
+        className={styles.button}
         onClick={() => setIsShown(!isShown)}
       >
         <BiUserCircle fill='#A4A4A4' />
@@ -92,7 +90,7 @@ const AuthForm: FC = () => {
               }
             })}
           />
-          <div className={styles.formButtons}>
+          <div className={styles.form__buttons}>
             <Button onClick={() => setType('login')}>Login</Button>
             <Button className='secondary' onClick={() => setType('register')}>
               Register

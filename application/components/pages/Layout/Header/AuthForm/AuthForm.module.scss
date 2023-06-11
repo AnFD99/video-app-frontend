@@ -1,12 +1,16 @@
-.wrapper {
-	@apply relative inline-flex;
+.auth__container {
+	@apply relative inline-flex text-base;
+
+	.button {
+	@apply inline-flex mx-2 items-center justify-center text-2xl;
+}
 
 	.form {
 		@apply block shadow-2xl p-4 absolute right-2 z-50 bg-white animate-scaleIn w-56 rounded-md;
 
 		top: calc(100% + 1.5rem);
 
-		.formButtons {
+		.form__buttons {
 			@apply flex gap-2 justify-center w-full mb-1;
 		}
 	}
